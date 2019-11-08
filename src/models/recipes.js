@@ -8,19 +8,20 @@ module.exports = (sequelize, DataTypes) => {
         len: [0, 100],
       },
     },
-    ingredients:  {
-      type: DataTypes.TEXT(5120),
+    type: {
+      type: DataTypes.STRING(50),
       allowNull: false,
       validate: {
-        len: [0, 5120],
+        len: [0, 50],
       },
     },
-    description: {
-      type: DataTypes.TEXT(5120),
+    ingredients:  {
+      type: DataTypes.TEXT,
       allowNull: false,
-      validate: {
-        len: [0, 5120],
-      },
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     prepTime: {
       type: DataTypes.INTEGER,
