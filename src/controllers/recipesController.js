@@ -22,7 +22,7 @@ router.get('/:id', (req, res, next) => {
 
 router.put('/:id', (req, res, next) => {
   recipesService.updateRecipe(req.params.id, req.body)
-    .then(() => res.status(204).send())
+    .then(() => res.status(201).send({ recipe: req.body }))
     .catch((error) => next(error));
 });
 
