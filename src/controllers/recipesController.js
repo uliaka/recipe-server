@@ -1,17 +1,17 @@
-var express = require('express');
-var recipesService = require ('../services/recipesService.js');
-var router  = express.Router();
+const express = require('express');
+const recipesService = require ('../services/recipesService.js');
+const router  = express.Router();
 
 router.post('/', function(req, res, next) {
   recipesService.createRecipe(req.body)
-  .then((user) => res.status(201).send(user))
-  .catch((error) => next(error));
+    .then((data) => res.status(201).send(data))
+    .catch((error) => next(error));
 });
 
 router.get('/', function(req, res, next) {
   recipesService.getRecipes()
-  .then((data) => res.json({ data }))
-  .catch((error) => next(error));
+    .then((data) => res.json({ data }))
+    .catch((error) => next(error));
 });
 
 router.get('/:id', (req, res, next) => {
@@ -31,4 +31,5 @@ router.delete('/:id', (req, res, next) => {
     .then(() => res.status(204).end())
     .catch((error) => next(error));
 });
+
 module.exports = router;
