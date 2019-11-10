@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    directions: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     prepTime: {
       type: DataTypes.INTEGER,
       allowNull: true,

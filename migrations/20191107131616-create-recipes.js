@@ -20,6 +20,9 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
+      directions: {
+        type: Sequelize.TEXT,
+      },
       prepTime: {
         type: Sequelize.INTEGER
       },
